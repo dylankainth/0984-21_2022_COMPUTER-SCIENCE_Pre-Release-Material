@@ -1,15 +1,12 @@
 # Import Libraries
 from datetime import datetime
 
-# Task 1
-
-# our data structure
+# Our data structure
 datastructure = []
 
-# datastructure.append({'first_name': 'John', 'last_name': 'Doe', 'volunteer': False,  'volunteerarea': 3,  'datejoined': '','feepaid': True})
+# Task 1
 
-# a function to ask user for details and add new member to the list
-
+# A function to ask user for details and add new member to the list
 def add_member():
 
     # declare local variables
