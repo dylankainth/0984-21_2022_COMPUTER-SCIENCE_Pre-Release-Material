@@ -22,7 +22,6 @@ while True:
   try:
     query = int(queryinput)
     
-        
     if query == 1:
       print("1. Members who have chosen to work as volunteers:") 
       for member in sampledata:
@@ -61,7 +60,7 @@ while True:
     elif query == 6:
       print("6. Members who have not yet paid their $75 fee.")
       for member in sampledata:
-        if not member["isfeepaid"]:
+        if member["isFeepaid"]=='n':
           print(member["first_name"],member["last_name"])
 
     else:

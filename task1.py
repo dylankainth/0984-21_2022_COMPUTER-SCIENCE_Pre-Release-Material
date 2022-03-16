@@ -10,53 +10,35 @@ datastructure = []
 def add_member():
 
     # declare local variables
-    first_name = ''
-    last_name = ''
-    volunteerinput = ''
     volunteerarea = ''
     datejoined = ''
     datejoinedinput = ''
-    feepaidinput = ''
 
     # NAMES
-    # validate first name as not being empty
-    while not first_name.isalpha():
-        first_name = input('Enter first name: ')
-
-    # capitalize first letter of first name
-    first_name = first_name.capitalize()
-
-    # validate last name
-    while not last_name.isalpha():
-        last_name = input('Enter last name: ')
-
-    # capitalize first letter of last name
-    last_name = last_name.capitalize()
+    # get first and last names, whilst capitalising the first letters.
+    firstName = input('Enter first name: ').capitalize()
+    lastName = input('Enter last name: ').capitalize()
 
     # VOLUNTEER
-    # validate volunteer status
-    while not (volunteerinput.lower() == 'y' or volunteerinput.lower() == 'n'):
-        volunteerinput = input('Are you a volunteer? (y/n): ')
+    while True:
+        isVolunteer = input('Are you a volunteer? (y/n): ').lower()
+        if isVolunteer == 'n':
+            break;
+        elif isVolunteer == 'y':
+            # volunteer area things
+            while True:
+                print( " 1.The pier entrance gate \n 2.the gift shop \n 3.painting and decorating")
+                volunteerarea = input('Enter volunteer area (1-3): ')
 
-        if volunteerinput.lower() == "y":
-            # validate volunteer areainput
-            while not (volunteerarea.isdigit() and int(volunteerarea) in range(1, 4)):
-
-                print(
-                    " 1.The pier entrance gate \n 2.the gift shop \n 3.painting and decorating")
-
-                volunteerarea = input("What area are you in? (1-3): ")
-
-        elif volunteerinput.lower() == "n":
-
-            break
-
-    # convert volunteer input to boolean
-    if volunteerinput == 'y':
-        volunteer = True
-
-    elif volunteerinput == 'n':
-        volunteer = False
+                if volunteerarea == '1' or volunteerarea == '2' or volunteerarea == '3':
+                    break;
+                else:
+                    print('Invalid input, please try again.')
+                    continue;
+            break;
+        else:
+            print('Please enter y or n')
+            continue;
 
     # DATE JOINED
     while True:
@@ -70,22 +52,22 @@ def add_member():
 
     # FEES PAID
     # validate fees paid
-    while not (feepaidinput.lower() == 'y' or feepaidinput.lower() == 'n'):
-        feepaidinput = input('Have you paid the fee (y/n): ')
-
-    if feepaidinput == 'y':
-        feepaid = True
-    elif feepaidinput == 'n':
-        feepaid = False
+    while True:
+        isFeepaid = input('Have you paid the fee (y/n): ')
+        if isFeepaid == 'y' or isFeepaid == 'n':
+            break;
+        else:
+            print('Please enter y or n')
+            continue;
 
     # add new member to the list
     datastructure.append({
-        'first_name': first_name,
-        'last_name': last_name,
-        'isvolunteer': volunteer,
+        'first_name': firstName,
+        'last_name': lastName,
+        'isvolunteer': isVolunteer,
         'volunteerarea': volunteerarea,
         'datejoined': datejoined,
-        'isfeepaid': feepaid
+        'isfeepaid': isFeepaid
     })
 
 while True:
