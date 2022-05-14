@@ -3,8 +3,7 @@
 # Import Libraries
 import datetime
 
-sampledata = [{'name': 'Dylan Kainth', 'isVolunteer': 'y', 'volunteerArea': '2', 'dateJoined': '14/05/2022', 'isFeepaid': 'n'}, {'name': 'Bob Joe', 'isVolunteer': 'n', 'volunteerArea': '', 'dateJoined': '14/04/2017', 'isFeepaid': 'y'},
-              {'name': 'Sam Example', 'isVolunteer': 'y', 'volunteerArea': '1', 'dateJoined': '15/02/2015', 'isFeepaid': 'y'}, {'name': 'Julie Test', 'isVolunteer': 'y', 'volunteerArea': '3', 'dateJoined': '12/12/2021', 'isFeepaid': 'y'}]
+sampledata = [{'name': 'dylan', 'isVolunteer': 'y', 'volunteerArea': '3', 'dateJoined': datetime.datetime(2018, 12, 9, 0, 0), 'isFeepaid': 'y'}]
 
 while True:
     print("Please Select a query")

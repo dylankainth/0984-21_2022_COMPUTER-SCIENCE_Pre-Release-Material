@@ -1,5 +1,5 @@
 # Task 1 
-
+from datetime import datetime
 # Our data structure
 dataStructure = []
 
@@ -29,13 +29,11 @@ while True:
         else:
             print("Invalid input")
             continue
-    
-    dateJoined = input("Enter date joined: ")
-    
+
     while True:
         try:
-            from datetime import datetime
-            datejoined = datetime.datetime.strptime(dateJoined, '%d/%m/%Y')
+            dateJoinedInput = input("Enter date joined: ")
+            dateJoined = datetime.strptime(dateJoinedInput, '%d/%m/%Y')
             break;
         except:
             print("Invalid date format error")
