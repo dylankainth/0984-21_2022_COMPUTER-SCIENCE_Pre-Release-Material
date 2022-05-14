@@ -31,15 +31,21 @@ while True:
             continue
     
     dateJoined = input("Enter date joined: ")
-    #dateJoined = datetime.strptime(dateJoined, '%Y-%m-%d')
+    
+    while True:
+        try:
+            from datetime import datetime
+            datejoined = datetime.datetime.strptime(dateJoined, '%d/%m/%Y')
+            break;
+        except:
+            print("Invalid date format error")
+            continue;
 
     while True:
         isFeepaid = input("Is the person fee paid? (y/n): ")
         if isFeepaid == "y":
-            isFeepaid = True
             break;
         elif isFeepaid == "n":
-            isFeepaid = False
             break;
         else: 
             print("Invalid input")
@@ -67,3 +73,5 @@ while True:
         break;
     else:
         continue;
+
+print(dataStructure)
