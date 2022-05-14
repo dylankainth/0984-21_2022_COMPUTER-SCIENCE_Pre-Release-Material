@@ -54,7 +54,7 @@ while True:
                 today = datetime.datetime.today()
                 oneyearago = today.replace(year=today.year - 1)
 
-                if oneyearago > datejoined:
+                if oneyearago > member['dateJoined']:
                   print(member["name"])
 
         elif query == 6:
