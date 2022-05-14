@@ -1,91 +1,69 @@
-# Import Libraries
-from datetime import datetime
+# Task 1 
 
 # Our data structure
-datastructure = []
-
-# Task 1
-
-# A function to ask user for details and add new member to the list
-def add_member():
-
-    # declare local variables
-    volunteerarea = ''
-    datejoined = ''
-    datejoinedinput = ''
-
-    # NAMES
-    # get first and last names, whilst capitalising the first letters.
-    firstName = input('Enter first name: ').capitalize()
-    lastName = input('Enter last name: ').capitalize()
-
-    # VOLUNTEER
-    while True:
-        isVolunteer = input('Are you a volunteer? (y/n): ').lower()
-        if isVolunteer == 'n':
-            break;
-        elif isVolunteer == 'y':
-            # volunteer area things
-            while True:
-                print( " 1.The pier entrance gate \n 2.the gift shop \n 3.painting and decorating")
-                volunteerarea = input('Enter volunteer area (1-3): ')
-
-                if volunteerarea == '1' or volunteerarea == '2' or volunteerarea == '3':
-                    break;
-                else:
-                    print('Invalid input, please try again.')
-                    continue;
-            break;
-        else:
-            print('Please enter y or n')
-            continue;
-
-    # DATE JOINED
-    while True:
-        try:
-            datejoinedinput = input('Enter date joined (DDMMYYYY): ')
-            # parse date joined
-            datejoined = datetime.strptime(datejoinedinput, '%d%m%Y')
-            break
-        except:
-            print("Please enter a date in the correct format")
-
-    # FEES PAID
-    # validate fees paid
-    while True:
-        isFeepaid = input('Have you paid the fee (y/n): ')
-        if isFeepaid == 'y' or isFeepaid == 'n':
-            break;
-        else:
-            print('Please enter y or n')
-            continue;
-
-    # add new member to the list
-    datastructure.append({
-        'first_name': firstName,
-        'last_name': lastName,
-        'isvolunteer': isVolunteer,
-        'volunteerarea': volunteerarea,
-        'datejoined': datejoined,
-        'isfeepaid': isFeepaid
-    })
+dataStructure = []
 
 while True:
-    add_member()
+    volunteerArea = ""
+    dateJoined = ""
+
+    name = input("Enter name: ")
 
     while True:
-        question = input("Would you like to add another? (y/n): ").lower()
+        isVolunteer = input("Is the person a volunteer? (y/n): ")
+        if isVolunteer == "y":
 
-        if question == "y":
-            break
-        elif question == "n":
-            break
+            while True:
+                print("1.Gate  2.Shop  3.Painting")
+                volunteerArea = input("Enter volunteer area: ")
+
+                if volunteerArea=="1" or volunteerArea=="2" or volunteerArea=="3":
+                    break;
+                else:
+                    print("Invalid input")
+                    continue; 
+            
+            break;
+        elif isVolunteer == "n":
+            break;
         else:
-            print("Please try to input again")
+            print("Invalid input")
+            continue
+    
+    dateJoined = input("Enter date joined: ")
+    #dateJoined = datetime.strptime(dateJoined, '%Y-%m-%d')
 
-    if question == "y":
-        continue
-    elif question == "n":
-        break
+    while True:
+        isFeepaid = input("Is the person fee paid? (y/n): ")
+        if isFeepaid == "y":
+            isFeepaid = True
+            break;
+        elif isFeepaid == "n":
+            isFeepaid = False
+            break;
+        else: 
+            print("Invalid input")
+            continue;
 
-print(datastructure)
+    dataStructure.append({
+        "name": name,
+        "isVolunteer": isVolunteer,
+        "volunteerArea": volunteerArea,
+        "dateJoined": dateJoined,
+        "isFeepaid": isFeepaid
+    })
+
+    while True:
+        addMore = input("Add more? (y/n): ")
+        if addMore == "y":
+            break;
+        elif addMore == "n":
+            break;
+        else:
+            print("Invalid input")
+            continue;
+        
+    if addMore == "n":
+        break;
+    else:
+        continue;
