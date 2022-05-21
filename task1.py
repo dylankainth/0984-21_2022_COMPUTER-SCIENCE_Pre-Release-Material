@@ -40,7 +40,7 @@ while True:
             continue;
 
     while True:
-        isFeepaid = input("Is the person fee paid? (y/n): ")
+        isFeepaid = input("Has the person paid the fee? (y/n): ")
         if isFeepaid == "y":
             break;
         elif isFeepaid == "n":
@@ -58,7 +58,7 @@ while True:
     })
 
     while True:
-        addMore = input("Add more? (y/n): ")
+        addMore = input("Add another person? (y/n): ")
         if addMore == "y":
             break;
         elif addMore == "n":
